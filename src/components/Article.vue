@@ -19,10 +19,20 @@
     <div>
       <div class="topbar">回复</div>
       <div v-for="(reply, index) in post.replies" :key="reply.id">
-        <router-link>
+        <router-link :to="{
+          name: 'user_info',
+          params: {
+            name: reply.author.loginname
+          }
+        }">
           <img :src="reply.author.avatar_url" alt="">
         </router-link>
-        <router-link>
+        <router-link :to="{
+          name: 'user_info',
+          params: {
+            name: reply.author.loginname
+          }
+        }">
           <span>{{reply.author.loginname}}</span>
         </router-link>
         <span>{{index+1}}楼</span>

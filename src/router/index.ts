@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter, {RouteConfig} from 'vue-router';
 import Article from '@/components/Article.vue';
 import PostList from '@/components/PostList.vue';
+import UserInfo from '@/components/UserInfo.vue';
 
 Vue.use(VueRouter);
 
@@ -22,8 +23,10 @@ const routes: Array<RouteConfig> = [
     },
     {
       path: '/user/:name',
-      name: 'user_info'
-      // TODO
+      name: 'user_info',
+      components: {
+        main: UserInfo
+      }
     }
   ]
 ;
