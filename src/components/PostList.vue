@@ -16,7 +16,7 @@
             <span>招聘</span>
           </div>
         </li>
-        <li v-for="post in posts" :key="post.author.avatar_url">
+        <li v-for="(post, index) in posts" :key="index">
           <!--头像-->
           <img :src="post.author.avatar_url" alt="">
           <!--回复/浏览-->
