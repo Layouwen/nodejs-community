@@ -37,3 +37,16 @@ Vue.filter('formatData', (str: string) => {
     return parseInt(String(time / 31536000000)) + '年前';
   }
 });
+
+// tab格式化
+Vue.filter('tabFormatter', function (post: any) {
+  if (post.good === true) {
+    return '精华';
+  } else if (post.top === true) {
+    return '置顶';
+  } else if (post.tab === 'ask') {
+    return '问答';
+  } else {
+    return '招聘';
+  }
+});

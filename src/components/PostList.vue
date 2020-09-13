@@ -7,6 +7,13 @@
     <!--    列表区域-->
     <div>
       <ul>
+        <li class="topBar">
+          <span>全部</span>
+          <span>精华</span>
+          <span>分享</span>
+          <span>问答</span>
+          <span>招聘</span>
+        </li>
         <li v-for="post in posts" :key="post.id">
           <!--          头像-->
           <img :src="post.author.avatar_url" alt="">
@@ -15,9 +22,16 @@
             <span class="reply_count">{{post.reply_count}}</span>/{{post.visit_count}}
           </span>
           <!--          帖子分类-->
-          <!--          TODO-->
+          <span>{{post | tabFormatter}}</span>
           <!--          帖子标题-->
-          <span>{{post.title}}</span>
+          <router-link :to="{
+            name: 'post_context',
+            params: {
+              id: post.id
+            }
+          }">
+            <span>{{post.title}}</span>
+          </router-link>
           <!--          最后回复时间-->
           <span class="last_reply">{{post.last_reply_at | formatData}}</span>
         </li>
