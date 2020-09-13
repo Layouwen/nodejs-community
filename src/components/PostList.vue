@@ -27,7 +27,8 @@
           <router-link :to="{
             name: 'post_context',
             params: {
-              id: post.id
+              id: post.id,
+              name: post.author.loginname
             }
           }">
             <span>{{post.title}}</span>

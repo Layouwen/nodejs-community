@@ -70,7 +70,11 @@
     beforeMount() {
       this.isLoading = true
       this.getArticleData()
-      console.log(this.post)
+    },
+    watch: {
+      "$route"(to, from) {
+        this.getArticleData()
+      }
     }
   }
 </script>
